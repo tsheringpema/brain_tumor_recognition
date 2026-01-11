@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brain Tumor Detection</title>
+</head>
+<body style="margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; position: relative;">
+    
+    <!-- Sidebar-style nav on the top-left -->
+<div style="
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+">
+    <a href="{% url 'home' %}" style="
+        background-color: #190ccb;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 100px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#0f0894'" onmouseout="this.style.backgroundColor='#190ccb'">
+        Home
+    </a>
+
+    <a href="{% url 'team' %}" style="
+        background-color: #190ccb;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 100px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#0f0894'" onmouseout="this.style.backgroundColor='#190ccb'">
+        Team
+    </a>
+</div>
+<!-- Logo at top-right -->
+<div style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+">
+    <img src="{% static 'bhutan_flag.png' %}" 
+         alt="Logo"
+         style="height: 90px; width: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+</div>
+
+    <!-- Background image with brightness filter applied -->
+    <img src="/static/brain-tumor-treatment-2104.jpg" 
+         alt="Brain Background" 
+         style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5) saturate(2.0) contrast(1.1);
+            z-index: -1;
+        ">
+
+    <!-- Overlay content -->
+    <div style="
+        background-color: rgba(0, 0, 0, 0.4); 
+        color: white;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    ">
+        <h1 style="font-size: 3em; margin-bottom: 0.5em; color: #ffffff;">
+            Druk Brain Tumor Recognition
+        </h1>
+        <p style="font-size: 1.5em; max-width: 800px;">
+            “Behind every brain tumor is a story of courage, resilience, and the unwavering will to fight. Together, we shine a light on hope.”
+        </p>
+        <p style="font-size: 1.3em; margin-bottom: 2em;">
+            Upload your brain MRI and get a diagnosis in seconds.
+        </p>
+        <a href="{% url 'predict' %}">
+            <button style="
+                padding: 15px 30px;
+                font-size: 1.2em;
+                background-color: #190ccb;
+                color: white;
+                border: none;
+                border-radius: 100px;
+                cursor: pointer;
+            ">
+                Start Prediction
+            </button>
+        </a>
+    </div>
+
+</body>
+</html>
+
+

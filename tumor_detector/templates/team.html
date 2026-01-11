@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .header {
+            padding: 50px 20px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 15px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .team-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-card h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .team-card p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background image -->
+<img src="{% static '/brain-tumor-treatment-2104.jpg' %}" 
+     alt="Brain Background" 
+     style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5) saturate(1.8) contrast(1.2);
+        z-index: -1;
+    ">
+
+<!-- Overlay Content -->
+<div style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.5); min-height: 100vh; padding-bottom: 40px;">
+
+<!-- Home Button -->
+<a href="{% url 'home' %}" style="
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    text-decoration: none;
+">
+    <button style="
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #190ccb;
+        color: white;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    ">
+        Home
+    </button>
+</a>
+
+    <div class="header">
+        <h1>TEAM</h1>
+        <p>We are a group of passionate developers and researchers dedicated to advancing brain tumor detection using cutting-edge deep learning technologies.</p>
+        <p>Meet our team.</p>
+    </div>
+
+    <div class="team-container">
+        <!-- Member 1 -->
+        <div class="team-card">
+            <img src="{% static 'suraj.jpg' %}" alt="Suraj Rai">
+            <h3>Suraj Rai</h3>
+            <p>07220024.sherubtse@rub.edu.bt</p>
+            <p>17603650</p>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+            <img src="{% static 'passang.jpg' %}" alt="Passang Gyem">
+            <h3>Passang Gyem</h3>
+            <p>07220015.sherubtse@rub.edu.bt</p>
+            <p>77242835</p>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+            <img src="{% static 'tshering.jpg' %}" alt="Tshering Pema">
+            <h3>Tshering Pema</h3>
+            <p>07220028.sherubtse@rub.edu.bt</p>
+            <p>17660710</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+
